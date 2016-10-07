@@ -1,5 +1,6 @@
 <?php
 	include "php/common.php";
+	init();
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,22 +10,17 @@
 <!-- CSS list -->
 <LINK href="css/main.css" rel="stylesheet" type="text/css">
 <!-- script list -->
+<?php php_data_to_js(); ?>
 <script src='js/main.js'></script>
+<script src='js/display.js'></script>
 </head>
 <body>
 	<center>
 		<h1>不潔秘林</h1>
 		<hr>
-		<?php if (is_login()) { ?>
-			<p>歡迎回來，<?php echo get_user_readname() ?>…今天你是污染側，還是被污染側呢？嘿嘿嘿…</p>
-		<?php } else { ?>
-			<p>出示你的身份吧！稀客。
-				<span>稱號：<input type="text" name="id" /></span>
-				<span>秘語：<input type="password" name="passwd" /></span>
-				<input type="submit" onclick="javascript: do_login();" value="出示身份" />
-				<input type="submit" onclick="javascript: do_register();" value="宣告新的稱號" />
-			</p>
-		<?php } ?>
+		<div class="login_hint">
+			<script>show_login_hint();</script>
+		</div>
 		<div id="stories">
 			<div class="story">
 				<h2>魔物娘亂舞</h2>
