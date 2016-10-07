@@ -9,7 +9,7 @@
 <!-- CSS list -->
 <LINK href="css/main.css" rel="stylesheet" type="text/css">
 <!-- script list -->
-<!--<script src='js/util.js'></script>-->
+<script src='js/main.js'></script>
 </head>
 <body>
 	<center>
