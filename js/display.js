@@ -12,12 +12,10 @@
 		<?php } ?>
 */
 
-function show_login_hint(msg)
+function show_login_hint(msg, dom)
 {
 	var content;
-	var node = this;
-	console.log(this);
-	console.log(this.parent);
+	var node = dom || this;
 	if (login_flag)
 	{
 		content = '<p>歡迎回來，'+readname+'…今天你是污染側，還是被污染側呢？嘿嘿嘿…'+
@@ -32,5 +30,5 @@ function show_login_hint(msg)
 				'<input type="submit" onclick="javascript: do_register();" value="宣告新的稱號" />'+
 			'</p>';
 	}
-	this.innerHTML = content;
+	node.innerHTML = content;
 }

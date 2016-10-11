@@ -46,18 +46,18 @@
 	function php_data_to_js()
 	{
 		echo "<script>".
-			"var login_flag = "+is_login()+";\n".
-			"var readname = '"+get_user_readname()+"';\n".
-			"var ACTION_FIELD = '"+ACTION_FIELD+"';\n".
-			"var USERNAME_FIELD = '"+USERNAME_FIELD+"';\n".
-			"var PASSWORD_FIELD = '"+PASSWORD_FIELD+"';\n".
-			"var ACTION_LOGIN = "+ACTION_LOGIN+";\n".
-			"var ACTION_REGISTER = "+ACTION_REGISTER+";\n".
-			"var ACTION_LOGOUT = "+ACTION_LOGOUT+";\n".
-			"var ACTION_EXPAND_SERIES = "+ACTION_EXPAND_SERIES+";\n".
-			"var ACTION_READ_ARTICLE = "+ACTION_READ_ARTICLE+";\n".
-			"var ACTION_CREATE_SERIES = "+ACTION_CREATE_SERIES+";\n".
-			"var ACTION_CREATE_ARTICLE = "+ACTION_CREATE_ARTICLE+";\n".
+			"var login_flag = ".(is_login() ? 1 : 0).";\n".
+			"var readname = '".get_user_readname()."';\n".
+			"var ACTION_FIELD = '".ACTION_FIELD."';\n".
+			"var USERNAME_FIELD = '".USERNAME_FIELD."';\n".
+			"var PASSWORD_FIELD = '".PASSWORD_FIELD."';\n".
+			"var ACTION_LOGIN = ".ACTION_LOGIN.";\n".
+			"var ACTION_REGISTER = ".ACTION_REGISTER.";\n".
+			"var ACTION_LOGOUT = ".ACTION_LOGOUT.";\n".
+			"var ACTION_EXPAND_SERIES = ".ACTION_EXPAND_SERIES.";\n".
+			"var ACTION_READ_ARTICLE = ".ACTION_READ_ARTICLE.";\n".
+			"var ACTION_CREATE_SERIES = ".ACTION_CREATE_SERIES.";\n".
+			"var ACTION_CREATE_ARTICLE = ".ACTION_CREATE_ARTICLE.";\n".
 		"</script>";
 	}
 
@@ -68,7 +68,7 @@
 
 	function is_login()
 	{
-		return $_SESSION[LOGIN_FLAG];
+		return $_SESSION[LOGIN_FLAG] ? true : false;
 	}
 
 	function set_login($name)

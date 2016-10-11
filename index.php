@@ -18,9 +18,9 @@
 	<center>
 		<h1>不潔秘林</h1>
 		<hr>
-		<div class="login_hint">
-			<script>show_login_hint();</script>
+		<div id="login_hint">
 		</div>
+		<script>show_login_hint(null, document.getElementById("login_hint"));</script>
 		<div id="stories">
 			<div class="story">
 				<h2>魔物娘亂舞</h2>
